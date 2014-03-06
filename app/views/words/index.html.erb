@@ -1,0 +1,47 @@
+<h3>Search</h3>
+<form action ="words/search"  method="post">
+<input  name="key"  type="input"/>
+<input  value="Search" type="submit"/>
+</form>
+
+
+<% ("A"..."Z").each do |letter|%>
+<%= link_to letter%>
+<%@words.each do |word| %>
+<% if 
+word.word.chars.first==@letter%>
+<%word.word%>
+<%end%>
+<%end%>
+<%end%>
+<h1>Listing words</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Wordtype</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @words.each do |word| %>
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.wordtype %></td>
+        <td><%= word.description %></td>
+        <td><%= link_to 'Show', word %></td>
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

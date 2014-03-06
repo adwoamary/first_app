@@ -1,0 +1,28 @@
+<h1>Search Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Wordtype</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @word.each do |word| %>
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.wordtype %></td>
+        <td><%= word.description %></td>
+        <td><%= link_to 'Show', word %></td>
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
