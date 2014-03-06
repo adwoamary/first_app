@@ -12,7 +12,7 @@ class WordsController < ApplicationController
   def show
   end
   def search
-	  @word = Word.find( :all , :conditions => ["Word LIKE ?", "#{params:key}"])
+	  @words = Word.find( :all , :conditions => ["word LIKE ?", "#{params:key}"])
 	  end
   # GET /words/new
   def new
