@@ -1,47 +1,71 @@
+<html>
+<h1>Listing words</h1>
+
 <h3>Search</h3>
 <form action ="words/search"  method="post">
 <input  name="key"  type="input"/>
 <input  value="Search" type="submit"/>
 </form>
+<br>
 
-
-<% ("A"..."Z").each do |letter|%>
-<%= link_to letter%>
-<%@words.each do |word| %>
-<% if 
-word.word.chars.first==@letter%>
-<%word.word%>
-<%end%>
-<%end%>
-<%end%>
-<h1>Listing words</h1>
-
+  <%= link_to ('A'), words_path(:word => 'A') %>
+  <%= link_to ('B'), words_path(:word => 'B') %>
+  <%= link_to ('C'), words_path(:word => 'C') %>
+  <%= link_to ('D'), words_path(:word => 'D') %>
+  <%= link_to ('E'), words_path(:word => 'E') %>
+  <%= link_to ('F'), words_path(:word => 'F') %>
+  <%= link_to ('G'), words_path(:word => 'G') %>
+  <%= link_to ('H'), words_path(:word => 'H') %>
+  <%= link_to ('I'), words_path(:word => 'I') %>
+  <%= link_to ('J'), words_path(:word => 'J') %>
+  <%= link_to ('K'), words_path(:word => 'K') %>
+  <%= link_to ('L'), words_path(:word => 'L') %>
+  <%= link_to ('M'), words_path(:word => 'M') %>
+  <%= link_to ('O'), words_path(:word => 'O') %>
+  <%= link_to ('P'), words_path(:word => 'P') %>
+  <%= link_to ('Q'), words_path(:word => 'Q') %>
+  <%= link_to ('R'), words_path(:word => 'R') %>
+  <%= link_to ('S'), words_path(:word => 'S') %>
+  <%= link_to ('U'), words_path(:word => 'U') %>
+  <%= link_to ('V'), words_path(:word => 'V') %>
+  <%= link_to ('W'), words_path(:word => 'W') %>
+  <%= link_to ('X'), words_path(:word => 'X') %>
+  <%= link_to ('Y'), words_path(:word => 'Y') %>
+  
 <table>
   <thead>
-    <tr>
-      <th>Word</th>
-      <th>Wordtype</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+    
   </thead>
 
   <tbody>
     <% @words.each do |word| %>
+    <%if word.word.chars.first==@letter %>
+    
       <tr>
         <td><%= word.word %></td>
         <td><%= word.wordtype %></td>
         <td><%= word.description %></td>
         <td><%= link_to 'Show', word %></td>
         
-        
+      </tr>
+      <%else if @letter == nil %>
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.wordtype %></td>
+        <td><%= word.description %></td>
+        <td><%= link_to 'Show', word %></td>
       </tr>
     <% end %>
+     <% end %>
+      <% end %>
   </tbody>
 </table>
 
 
+
+
+
+
+</html>
 
 

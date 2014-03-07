@@ -5,6 +5,7 @@ class WordsController < ApplicationController
   # GET /words.json
   def index
     @words = Word.all
+    @letter= (params[:word])
   end
 
   # GET /words/1
@@ -12,7 +13,7 @@ class WordsController < ApplicationController
   def show
   end
   def search
-	  @words = Word.find( :all , :conditions => ["word LIKE ?", "#{params:key}"])
+	  @words = Word.find( :all , :conditions => ["word LIKE ?", "#{params[:key]}"])
 	  end
   # GET /words/new
   def new
