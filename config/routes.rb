@@ -1,7 +1,8 @@
 Dictionary::Application.routes.draw do
- root 'words#index'
-  post 'words/search'
-  
+  resources :words do
+	  root 'words#index'
+  post 'search', :on => :collection
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
