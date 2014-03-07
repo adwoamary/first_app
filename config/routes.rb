@@ -1,6 +1,7 @@
 Dictionary::Application.routes.draw do
+    root 'words#index'
   resources :words do
-	  root 'words#index'
+	
   post 'search', :on => :collection
   end
 
